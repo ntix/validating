@@ -7,8 +7,4 @@ import { IErrors } from "./IErrors";
  *
  * @returns           a frozen error object
  */
-export declare function createError(
-  not: boolean,
-  errorKey: string,
-  errorValue?: any
-): IErrors;
+export declare function createError(not: boolean, errorKey: string, errorValue?: any): IErrors;

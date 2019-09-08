@@ -6,8 +6,9 @@
     "url": "https://github.com/MrAntix/validate",
     "type": "git"
   },
+  "main": "dist/index.js",
   "module": "dist/index.mjs",
-  "typings": "dist/index.d.ts",
+  "types": "dist/index.d.ts",
   "files": [
     "dist/"
   ],

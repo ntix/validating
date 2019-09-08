@@ -1,3 +1,7 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /** capitalise a string */
 function capitalize(value) {
     return !value ? value : value[0].toUpperCase() + value.substr(1);
@@ -171,5 +175,16 @@ class State {
     }
 }
 
-export { StandardErrors, State, Validator, capitalize, createError, createStandardErrors, isDate, isEqual, isNumber, isString, normalize, validate };
-//# sourceMappingURL=index.mjs.map
+exports.StandardErrors = StandardErrors;
+exports.State = State;
+exports.Validator = Validator;
+exports.capitalize = capitalize;
+exports.createError = createError;
+exports.createStandardErrors = createStandardErrors;
+exports.isDate = isDate;
+exports.isEqual = isEqual;
+exports.isNumber = isNumber;
+exports.isString = isString;
+exports.normalize = normalize;
+exports.validate = validate;
+//# sourceMappingURL=index.js.map
