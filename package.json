@@ -1,0 +1,75 @@
+{
+  "name": "@ntix/validate",
+  "version": "0.0.0-development",
+  "description": "a small validator",
+  "repository": {
+    "url": "https://github.com/MrAntix/validate",
+    "type": "git"
+  },
+  "module": "dist/index.mjs",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "prebuild": "npm run clean",
+    "build": "npm run barrels && rollup -c rollup.config.ts",
+    "build.docs": "typedoc --out docs --mode file src --theme minimal --readme docs.md --media dist",
+    "clean": "shx rm -rf dist",
+    "barrels": "barrelsby --delete --directory src --include \\.ts$ --exclude \\.spec\\.ts$ --location all",
+    "test": "jest",
+    "test.watch": "jest --watchAll",
+    "commit": "git add . && npx git-cz",
+    "semantic-release": "semantic-release"
+  },
+  "engines": {
+    "node": "^10.15"
+  },
+  "keywords": [
+    "validate",
+    "validation"
+  ],
+  "author": "Anthony Johnston <npm@antix.co.uk> (http://antix.co.uk)",
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "barrelsby": "^2.1.1",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.0.2",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.2.5",
+    "rollup": "^1.20.3",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-typescript2": "^0.24.0",
+    "semantic-release": "^15.13.24",
+    "shx": "^0.3.2",
+    "ts-jest": "24.0.2",
+    "typedoc": "^0.15.0",
+    "typescript": "^3.6.2"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "verbose": false,
+    "testMatch": [
+      "**/*.spec.ts"
+    ],
+    "moduleNameMapper": {
+      "(.*)\\.js": "$1"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,  scss,md,ts}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
