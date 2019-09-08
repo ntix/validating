@@ -2378,7 +2378,7 @@ img {
 <nav class="tsd-navigation secondary">
 	<ul>
 		<li class=" tsd-kind-class tsd-has-type-parameter">
-			<a href="validationstate.html" class="tsd-kind-icon">Validation<wbr>State</a>
+			<a href="state.html" class="tsd-kind-icon">State</a>
 		</li>
 		<li class="current tsd-kind-class">
 			<a href="validator.html" class="tsd-kind-icon">Validator</a>
@@ -2387,22 +2387,34 @@ img {
 					<a href="validator.html#constructor" class="tsd-kind-icon">constructor</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a href="validator.html#errors" class="tsd-kind-icon">errors</a>
+					<a href="validator.html#expected" class="tsd-kind-icon">expected</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a href="validator.html#negated" class="tsd-kind-icon">negated</a>
+					<a href="validator.html#negate" class="tsd-kind-icon">negate</a>
 				</li>
 				<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 					<a href="validator.html#not" class="tsd-kind-icon">not</a>
 				</li>
-				<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="validator.html#equal" class="tsd-kind-icon">equal</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
 					<a href="validator.html#exec" class="tsd-kind-icon">exec</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="validator.html#includes" class="tsd-kind-icon">includes</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="validator.html#matches" class="tsd-kind-icon">matches</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="validator.html#max" class="tsd-kind-icon">max</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="validator.html#maxlength" class="tsd-kind-icon">max<wbr>Length</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="validator.html#min" class="tsd-kind-icon">min</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="validator.html#minlength" class="tsd-kind-icon">min<wbr>Length</a>
@@ -2411,33 +2423,75 @@ img {
 					<a href="validator.html#null" class="tsd-kind-icon">null</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
-					<a href="validator.html#required" class="tsd-kind-icon">required</a>
+					<a href="validator.html#number" class="tsd-kind-icon">number</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="validator.html#rule" class="tsd-kind-icon">rule</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="validator.html#string" class="tsd-kind-icon">string</a>
 				</li>
 			</ul>
 		</li>
 		<li class=" tsd-kind-interface">
 			<a href="../interfaces/ierrors.html" class="tsd-kind-icon">IErrors</a>
 		</li>
+		<li class=" tsd-kind-interface">
+			<a href="../interfaces/irule.html" class="tsd-kind-icon">IRule</a>
+		</li>
+		<li class=" tsd-kind-interface">
+			<a href="../interfaces/istandarderrors.html" class="tsd-kind-icon">IStandard<wbr>Errors</a>
+		</li>
 		<li class=" tsd-kind-interface tsd-has-type-parameter">
-			<a href="../interfaces/ivalidationstate.html" class="tsd-kind-icon">IValidation<wbr>State</a>
+			<a href="../interfaces/istate.html" class="tsd-kind-icon">IState</a>
+		</li>
+		<li class=" tsd-kind-interface tsd-is-not-exported">
+			<a href="../interfaces/iuserregistration.html" class="tsd-kind-icon">IUser<wbr>Registration</a>
 		</li>
 		<li class=" tsd-kind-variable">
-			<a href="../globals.html#errors" class="tsd-kind-icon">Errors</a>
+			<a href="../globals.html#standarderrors" class="tsd-kind-icon">Standard<wbr>Errors</a>
 		</li>
 		<li class=" tsd-kind-variable">
 			<a href="../globals.html#validate" class="tsd-kind-icon">validate</a>
 		</li>
 		<li class=" tsd-kind-function">
+			<a href="../globals.html#capitalize" class="tsd-kind-icon">capitalize</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="../globals.html#createerror" class="tsd-kind-icon">create<wbr>Error</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="../globals.html#createstandarderrors" class="tsd-kind-icon">create<wbr>Standard<wbr>Errors</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="../globals.html#isdate" class="tsd-kind-icon">is<wbr>Date</a>
+		</li>
+		<li class=" tsd-kind-function">
 			<a href="../globals.html#isequal" class="tsd-kind-icon">is<wbr>Equal</a>
 		</li>
 		<li class=" tsd-kind-function">
-			<a href="../globals.html#isrequired" class="tsd-kind-icon">is<wbr>Required</a>
+			<a href="../globals.html#isnumber" class="tsd-kind-icon">is<wbr>Number</a>
 		</li>
 		<li class=" tsd-kind-function">
-			<a href="../globals.html#normalizeerrors" class="tsd-kind-icon">normalize<wbr>Errors</a>
+			<a href="../globals.html#isstring" class="tsd-kind-icon">is<wbr>String</a>
 		</li>
 		<li class=" tsd-kind-function">
-			<a href="../globals.html#valueof" class="tsd-kind-icon">value<wbr>Of</a>
+			<a href="../globals.html#normalize" class="tsd-kind-icon">normalize</a>
+		</li>
+		<li class=" tsd-kind-function tsd-is-not-exported">
+			<a href="../globals.html#notdecimalrule" class="tsd-kind-icon">not<wbr>Decimal<wbr>Rule</a>
+		</li>
+		<li class=" tsd-kind-function tsd-is-not-exported">
+			<a href="../globals.html#testnumbervalidator" class="tsd-kind-icon">test<wbr>Number<wbr>Validator</a>
+		</li>
+		<li class=" tsd-kind-function tsd-is-not-exported">
+			<a href="../globals.html#validatepassword" class="tsd-kind-icon">validate<wbr>Password</a>
+		</li>
+		<li class=" tsd-kind-function tsd-is-not-exported">
+			<a href="../globals.html#validateusername" class="tsd-kind-icon">validate<wbr>User<wbr>Name</a>
+		</li>
+		<li class=" tsd-kind-function tsd-is-not-exported">
+			<a href="../globals.html#validateuserregistration" class="tsd-kind-icon">validate<wbr>User<wbr>Registration</a>
 		</li>
 	</ul>
 </nav>
@@ -2464,8 +2518,8 @@ img {
 					<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
 						<h3>Properties</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="validator.html#errors" class="tsd-kind-icon">errors</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="validator.html#negated" class="tsd-kind-icon">negated</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="validator.html#expected" class="tsd-kind-icon">expected</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="validator.html#negate" class="tsd-kind-icon">negate</a></li>
 						</ul>
 					</section>
 					<section class="tsd-index-section ">
@@ -2477,12 +2531,18 @@ img {
 					<section class="tsd-index-section ">
 						<h3>Methods</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter"><a href="validator.html#equal" class="tsd-kind-icon">equal</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="validator.html#equal" class="tsd-kind-icon">equal</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="validator.html#exec" class="tsd-kind-icon">exec</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="validator.html#includes" class="tsd-kind-icon">includes</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="validator.html#matches" class="tsd-kind-icon">matches</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="validator.html#max" class="tsd-kind-icon">max</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="validator.html#maxlength" class="tsd-kind-icon">max<wbr>Length</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="validator.html#min" class="tsd-kind-icon">min</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="validator.html#minlength" class="tsd-kind-icon">min<wbr>Length</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="validator.html#null" class="tsd-kind-icon">null</a></li>
-							<li class="tsd-kind-method tsd-parent-kind-class"><a href="validator.html#required" class="tsd-kind-icon">required</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="validator.html#number" class="tsd-kind-icon">number</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="validator.html#rule" class="tsd-kind-icon">rule</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="validator.html#string" class="tsd-kind-icon">string</a></li>
 						</ul>
 					</section>
 				</div>
@@ -2494,22 +2554,19 @@ img {
 				<a name="constructor" class="tsd-anchor"></a>
 				<h3>constructor</h3>
 				<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">new <wbr>Validator<span class="tsd-signature-symbol">(</span>errors<span class="tsd-signature-symbol">: </span><a href="../interfaces/ierrors.html" class="tsd-signature-type">IErrors</a>, negated<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="validator.html" class="tsd-signature-type">Validator</a></li>
+					<li class="tsd-signature tsd-kind-icon">new <wbr>Validator<span class="tsd-signature-symbol">(</span>negate<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="validator.html" class="tsd-signature-type">Validator</a></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in validator.ts:4</li>
+								<li>Defined in validator.ts:11</li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>errors: <a href="../interfaces/ierrors.html" class="tsd-signature-type">IErrors</a></h5>
-							</li>
-							<li>
-								<h5><span class="tsd-flag ts-flagDefault value">Default value</span> negated: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></h5>
+								<h5><span class="tsd-flag ts-flagDefault value">Default value</span> negate: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <a href="validator.html" class="tsd-signature-type">Validator</a></h4>
@@ -2520,22 +2577,22 @@ img {
 		<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
 			<h2>Properties</h2>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-				<a name="errors" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagPrivate">Private</span> errors</h3>
-				<div class="tsd-signature tsd-kind-icon">errors<span class="tsd-signature-symbol">:</span> <a href="../interfaces/ierrors.html" class="tsd-signature-type">IErrors</a></div>
+				<a name="expected" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagPrivate">Private</span> expected</h3>
+				<div class="tsd-signature tsd-kind-icon">expected<span class="tsd-signature-symbol">:</span> <a href="../interfaces/istandarderrors.html" class="tsd-signature-type">IStandardErrors</a></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in validator.ts:5</li>
+						<li>Defined in validator.ts:11</li>
 					</ul>
 				</aside>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-				<a name="negated" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagPrivate">Private</span> negated</h3>
-				<div class="tsd-signature tsd-kind-icon">negated<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+				<a name="negate" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagPrivate">Private</span> negate</h3>
+				<div class="tsd-signature tsd-kind-icon">negate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in validator.ts:5</li>
+						<li>Defined in validator.ts:13</li>
 					</ul>
 				</aside>
 			</section>
@@ -2548,39 +2605,33 @@ img {
 				<div class="tsd-signature tsd-kind-icon">not<span class="tsd-signature-symbol">:</span> </div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in validator.ts:7</li>
+						<li>Defined in validator.ts:17</li>
 					</ul>
 				</aside>
 			</section>
 		</section>
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Methods</h2>
-			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 				<a name="equal" class="tsd-anchor"></a>
 				<h3>equal</h3>
-				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
-					<li class="tsd-signature tsd-kind-icon">equal&lt;T&gt;<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/ierrors.html" class="tsd-signature-type">IErrors</a></li>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">equal<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/ierrors.html" class="tsd-signature-type">IErrors</a></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in validator.ts:30</li>
+								<li>Defined in validator.ts:33</li>
 							</ul>
 						</aside>
-						<h4 class="tsd-type-parameters-title">Type parameters</h4>
-						<ul class="tsd-type-parameters">
-							<li>
-								<h4>T</h4>
-							</li>
-						</ul>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>a: <span class="tsd-signature-type">T</span></h5>
+								<h5>a: <span class="tsd-signature-type">any</span></h5>
 							</li>
 							<li>
-								<h5>b: <span class="tsd-signature-type">T</span></h5>
+								<h5>b: <span class="tsd-signature-type">any</span></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <a href="../interfaces/ierrors.html" class="tsd-signature-type">IErrors</a></h4>
@@ -2591,25 +2642,22 @@ img {
 				<a name="exec" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagPrivate">Private</span> exec</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<li class="tsd-signature tsd-kind-icon">exec<span class="tsd-signature-symbol">(</span>success<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, errorKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, errorValue<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/ierrors.html" class="tsd-signature-type">IErrors</a></li>
+					<li class="tsd-signature tsd-kind-icon">exec<span class="tsd-signature-symbol">(</span>result<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, failure<span class="tsd-signature-symbol">: </span><a href="../interfaces/ierrors.html" class="tsd-signature-type">IErrors</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/ierrors.html" class="tsd-signature-type">IErrors</a></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in validator.ts:11</li>
+								<li>Defined in validator.ts:75</li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>success: <span class="tsd-signature-type">boolean</span></h5>
+								<h5>result: <span class="tsd-signature-type">boolean</span></h5>
 							</li>
 							<li>
-								<h5>errorKey: <span class="tsd-signature-type">string</span></h5>
-							</li>
-							<li>
-								<h5><span class="tsd-flag ts-flagDefault value">Default value</span> errorValue: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;true</span></h5>
+								<h5>failure: <a href="../interfaces/ierrors.html" class="tsd-signature-type">IErrors</a></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <a href="../interfaces/ierrors.html" class="tsd-signature-type">IErrors</a></h4>
@@ -2617,22 +2665,77 @@ img {
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-				<a name="maxlength" class="tsd-anchor"></a>
-				<h3>max<wbr>Length</h3>
+				<a name="includes" class="tsd-anchor"></a>
+				<h3>includes</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">max<wbr>Length<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, max<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/ierrors.html" class="tsd-signature-type">IErrors</a></li>
+					<li class="tsd-signature tsd-kind-icon">includes<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/ierrors.html" class="tsd-signature-type">IErrors</a></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in validator.ts:38</li>
+								<li>Defined in validator.ts:53</li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>v: <span class="tsd-signature-type">string</span></h5>
+								<h5>a: <span class="tsd-signature-type">any</span></h5>
+							</li>
+							<li>
+								<h5>b: <span class="tsd-signature-type">any</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="../interfaces/ierrors.html" class="tsd-signature-type">IErrors</a></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="matches" class="tsd-anchor"></a>
+				<h3>matches</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">matches<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, re<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">RegExp</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, description<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/ierrors.html" class="tsd-signature-type">IErrors</a></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in validator.ts:57</li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>value: <span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li>
+								<h5>re: <span class="tsd-signature-type">RegExp</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagDefault value">Default value</span> description: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;null</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="../interfaces/ierrors.html" class="tsd-signature-type">IErrors</a></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="max" class="tsd-anchor"></a>
+				<h3>max</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">max<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, max<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/ierrors.html" class="tsd-signature-type">IErrors</a></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in validator.ts:45</li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>a: <span class="tsd-signature-type">number</span></h5>
 							</li>
 							<li>
 								<h5>max: <span class="tsd-signature-type">number</span></h5>
@@ -2643,22 +2746,74 @@ img {
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-				<a name="minlength" class="tsd-anchor"></a>
-				<h3>min<wbr>Length</h3>
+				<a name="maxlength" class="tsd-anchor"></a>
+				<h3>max<wbr>Length</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">min<wbr>Length<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, min<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/ierrors.html" class="tsd-signature-type">IErrors</a></li>
+					<li class="tsd-signature tsd-kind-icon">max<wbr>Length<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, max<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/ierrors.html" class="tsd-signature-type">IErrors</a></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in validator.ts:34</li>
+								<li>Defined in validator.ts:37</li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>v: <span class="tsd-signature-type">string</span></h5>
+								<h5>a: <span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li>
+								<h5>max: <span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="../interfaces/ierrors.html" class="tsd-signature-type">IErrors</a></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="min" class="tsd-anchor"></a>
+				<h3>min</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">min<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, min<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/ierrors.html" class="tsd-signature-type">IErrors</a></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in validator.ts:49</li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>a: <span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li>
+								<h5>min: <span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="../interfaces/ierrors.html" class="tsd-signature-type">IErrors</a></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="minlength" class="tsd-anchor"></a>
+				<h3>min<wbr>Length</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">min<wbr>Length<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, min<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/ierrors.html" class="tsd-signature-type">IErrors</a></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in validator.ts:41</li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>a: <span class="tsd-signature-type">string</span></h5>
 							</li>
 							<li>
 								<h5>min: <span class="tsd-signature-type">number</span></h5>
@@ -2678,7 +2833,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in validator.ts:26</li>
+								<li>Defined in validator.ts:21</li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2692,16 +2847,62 @@ img {
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-				<a name="required" class="tsd-anchor"></a>
-				<h3>required</h3>
+				<a name="number" class="tsd-anchor"></a>
+				<h3>number</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">required<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/ierrors.html" class="tsd-signature-type">IErrors</a></li>
+					<li class="tsd-signature tsd-kind-icon">number<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/ierrors.html" class="tsd-signature-type">IErrors</a></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in validator.ts:22</li>
+								<li>Defined in validator.ts:25</li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>a: <span class="tsd-signature-type">any</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="../interfaces/ierrors.html" class="tsd-signature-type">IErrors</a></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="rule" class="tsd-anchor"></a>
+				<h3>rule</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">rule<span class="tsd-signature-symbol">(</span>rule<span class="tsd-signature-symbol">: </span><a href="../interfaces/irule.html" class="tsd-signature-type">IRule</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/ierrors.html" class="tsd-signature-type">IErrors</a></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in validator.ts:68</li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>rule: <a href="../interfaces/irule.html" class="tsd-signature-type">IRule</a></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="../interfaces/ierrors.html" class="tsd-signature-type">IErrors</a></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="string" class="tsd-anchor"></a>
+				<h3>string</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">string<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/ierrors.html" class="tsd-signature-type">IErrors</a></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in validator.ts:29</li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>

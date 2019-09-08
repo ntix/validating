@@ -2378,7 +2378,7 @@ img {
 <nav class="tsd-navigation secondary">
 	<ul>
 		<li class=" tsd-kind-class tsd-has-type-parameter">
-			<a href="../classes/validationstate.html" class="tsd-kind-icon">Validation<wbr>State</a>
+			<a href="../classes/state.html" class="tsd-kind-icon">State</a>
 		</li>
 		<li class=" tsd-kind-class">
 			<a href="../classes/validator.html" class="tsd-kind-icon">Validator</a>
@@ -2386,31 +2386,74 @@ img {
 		<li class="current tsd-kind-interface">
 			<a href="ierrors.html" class="tsd-kind-icon">IErrors</a>
 		</li>
+		<li class=" tsd-kind-interface">
+			<a href="irule.html" class="tsd-kind-icon">IRule</a>
+		</li>
+		<li class=" tsd-kind-interface">
+			<a href="istandarderrors.html" class="tsd-kind-icon">IStandard<wbr>Errors</a>
+		</li>
 		<li class=" tsd-kind-interface tsd-has-type-parameter">
-			<a href="ivalidationstate.html" class="tsd-kind-icon">IValidation<wbr>State</a>
+			<a href="istate.html" class="tsd-kind-icon">IState</a>
+		</li>
+		<li class=" tsd-kind-interface tsd-is-not-exported">
+			<a href="iuserregistration.html" class="tsd-kind-icon">IUser<wbr>Registration</a>
 		</li>
 		<li class=" tsd-kind-variable">
-			<a href="../globals.html#errors" class="tsd-kind-icon">Errors</a>
+			<a href="../globals.html#standarderrors" class="tsd-kind-icon">Standard<wbr>Errors</a>
 		</li>
 		<li class=" tsd-kind-variable">
 			<a href="../globals.html#validate" class="tsd-kind-icon">validate</a>
 		</li>
 		<li class=" tsd-kind-function">
+			<a href="../globals.html#capitalize" class="tsd-kind-icon">capitalize</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="../globals.html#createerror" class="tsd-kind-icon">create<wbr>Error</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="../globals.html#createstandarderrors" class="tsd-kind-icon">create<wbr>Standard<wbr>Errors</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="../globals.html#isdate" class="tsd-kind-icon">is<wbr>Date</a>
+		</li>
+		<li class=" tsd-kind-function">
 			<a href="../globals.html#isequal" class="tsd-kind-icon">is<wbr>Equal</a>
 		</li>
 		<li class=" tsd-kind-function">
-			<a href="../globals.html#isrequired" class="tsd-kind-icon">is<wbr>Required</a>
+			<a href="../globals.html#isnumber" class="tsd-kind-icon">is<wbr>Number</a>
 		</li>
 		<li class=" tsd-kind-function">
-			<a href="../globals.html#normalizeerrors" class="tsd-kind-icon">normalize<wbr>Errors</a>
+			<a href="../globals.html#isstring" class="tsd-kind-icon">is<wbr>String</a>
 		</li>
 		<li class=" tsd-kind-function">
-			<a href="../globals.html#valueof" class="tsd-kind-icon">value<wbr>Of</a>
+			<a href="../globals.html#normalize" class="tsd-kind-icon">normalize</a>
+		</li>
+		<li class=" tsd-kind-function tsd-is-not-exported">
+			<a href="../globals.html#notdecimalrule" class="tsd-kind-icon">not<wbr>Decimal<wbr>Rule</a>
+		</li>
+		<li class=" tsd-kind-function tsd-is-not-exported">
+			<a href="../globals.html#testnumbervalidator" class="tsd-kind-icon">test<wbr>Number<wbr>Validator</a>
+		</li>
+		<li class=" tsd-kind-function tsd-is-not-exported">
+			<a href="../globals.html#validatepassword" class="tsd-kind-icon">validate<wbr>Password</a>
+		</li>
+		<li class=" tsd-kind-function tsd-is-not-exported">
+			<a href="../globals.html#validateusername" class="tsd-kind-icon">validate<wbr>User<wbr>Name</a>
+		</li>
+		<li class=" tsd-kind-function tsd-is-not-exported">
+			<a href="../globals.html#validateuserregistration" class="tsd-kind-icon">validate<wbr>User<wbr>Registration</a>
 		</li>
 	</ul>
 </nav>
 <div class="container container-main">
 	<div class="content-wrap">
+		<section class="tsd-panel tsd-comment">
+			<div class="tsd-comment tsd-typography">
+				<div class="lead">
+					<p>interface for validation results, i.e. errors</p>
+				</div>
+			</div>
+		</section>
 		<section class="tsd-panel tsd-hierarchy">
 			<h3>Hierarchy</h3>
 			<ul class="tsd-hierarchy">
@@ -2422,6 +2465,11 @@ img {
 		<section class="tsd-panel tsd-kind-interface">
 			<h3 class="tsd-before-signature">Indexable</h3>
 			<div class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><a href="ierrors.html" class="tsd-signature-type">IErrors</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">any</span></div>
+			<div class="tsd-comment tsd-typography">
+				<div class="lead">
+					<p>interface for validation results, i.e. errors</p>
+				</div>
+			</div>
 		</section>
 		<footer class="with-border-bottom">
 			<div class="container">

@@ -3,7 +3,7 @@
  */
 
 export * from "./validator";
-export * from "./errors/index";
 export * from "./predicates/index";
 export * from "./state/index";
 export * from "./utils/index";
+export * from "./validation/index";
