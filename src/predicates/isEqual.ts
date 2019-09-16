@@ -1,3 +1,4 @@
+
 /** deep equality check */
 export function isEqual(a: any, b: any): boolean {
   if (a === b) return true;
@@ -12,7 +13,7 @@ export function isEqual(a: any, b: any): boolean {
     );
   }
 
-  if (typeof a === "object" || typeof b === "object") {
+  if (typeof a === 'object' || typeof b === 'object') {
     const av = a.valueOf();
     const bv = b.valueOf();
     if (av !== a || bv !== b) return isEqual(av, bv);
@@ -21,3 +22,5 @@ export function isEqual(a: any, b: any): boolean {
 
   return false;
 }
+
+
