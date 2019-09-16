@@ -38,30 +38,6 @@ function createStandardErrors(not = false) {
     });
 }
 
-/** StandardErrors available
- *
- * including EMPTY and negated errors
- *
- * negated error keys are prefixed by 'not' e.g. { notNull: true } */
-const StandardErrors = Object.freeze(Object.assign(Object.assign({ EMPTY: Object.freeze({}) }, createStandardErrors()), { not: createStandardErrors(true) }));
-
-/** normalize a validation result, by removing empty sub-properties
- *
- * @param errors  any result from a validation function
- *
- * @returns       the result with empty sub-properties removed
- */
-function normalize(errors) {
-    if (typeof errors !== "object")
-        return errors;
-    return Object.keys(errors).reduce((result, key) => {
-        const value = normalize(errors[key]);
-        return value === StandardErrors.EMPTY
-            ? result
-            : Object.assign(Object.assign({}, result), { [key]: value });
-    }, StandardErrors.EMPTY);
-}
-
 /** checks value is a date */
 function isDate(value) {
     return !isNaN(Date.parse(value));
@@ -104,6 +80,42 @@ function isNumber(a) {
     if (isString(a))
         a = Number.parseFloat(a);
     return !isNaN(a) && typeof a === "number";
+}
+
+/** Checks an error object for errors optionally on a given path */
+function hasErrors(errors, path) {
+    if (errors == null || isEmpty(errors))
+        return false;
+    if (!path)
+        return true;
+    let i = path.indexOf('.');
+    if (i === -1)
+        i = path.length;
+    return hasErrors(errors[path.substring(0, i)], path.substring(i + 1));
+}
+
+/** StandardErrors available
+ *
+ * including EMPTY and negated errors
+ *
+ * negated error keys are prefixed by 'not' e.g. { notNull: true } */
+const StandardErrors = Object.freeze(Object.assign(Object.assign({ EMPTY: Object.freeze({}) }, createStandardErrors()), { not: createStandardErrors(true) }));
+
+/** normalize a validation result, by removing empty sub-properties
+ *
+ * @param errors  any result from a validation function
+ *
+ * @returns       the result with empty sub-properties removed
+ */
+function normalize(errors) {
+    if (typeof errors !== "object")
+        return errors;
+    return Object.keys(errors).reduce((result, key) => {
+        const value = normalize(errors[key]);
+        return value === StandardErrors.EMPTY
+            ? result
+            : Object.assign(Object.assign({}, result), { [key]: value });
+    }, StandardErrors.EMPTY);
 }
 
 class Validator {
@@ -191,5 +203,5 @@ class ValidationState {
     }
 }
 
-export { StandardErrors, ValidationState, Validator, capitalize, createError, createStandardErrors, isDate, isEmpty, isEqual, isNumber, isString, normalize, validate };
+export { StandardErrors, ValidationState, Validator, capitalize, createError, createStandardErrors, hasErrors, isDate, isEmpty, isEqual, isNumber, isString, normalize, validate };
 //# sourceMappingURL=index.mjs.map

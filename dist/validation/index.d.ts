@@ -3,6 +3,7 @@
  */
 export * from "./createError";
 export * from "./createStandardErrors";
+export * from "./hasErrors";
 export * from "./IErrors";
 export * from "./IRule";
 export * from "./IStandardErrors";
