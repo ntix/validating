@@ -1,4 +1,4 @@
-import { createStandardErrors } from "./createStandardErrors";
+import { createStandardErrors } from './createStandardErrors';
 
 /** StandardErrors available
  *
