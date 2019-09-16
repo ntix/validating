@@ -139,10 +139,10 @@ class Validator {
         return this.exec(isEqual(a, b), this.expected.equal(b));
     }
     maxLength(a, max) {
-        return this.exec(a.length <= max, this.expected.maxLength(max));
+        return this.exec(!a || a.length <= max, this.expected.maxLength(max));
     }
     minLength(a, min) {
-        return this.exec(a.length >= min, this.expected.minLength(min));
+        return this.exec(!a || a.length >= min, this.expected.minLength(min));
     }
     max(a, max) {
         return this.exec(a <= max, this.expected.max(max));

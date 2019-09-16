@@ -1,4 +1,4 @@
-import { IErrors, IRule } from "./validation";
+import { IErrors, IRule } from './validation';
 export declare class Validator {
     private negate;
     private readonly expected;
