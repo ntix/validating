@@ -4,8 +4,8 @@ import {
   IStandardErrors,
   IRule,
   createError
-} from "./validation";
-import { isEqual, isNumber, isString } from "./predicates";
+} from './validation';
+import { isEqual, isNumber, isString } from './predicates';
 
 export class Validator {
   private readonly expected: IStandardErrors;
@@ -35,11 +35,11 @@ export class Validator {
   }
 
   maxLength(a: string, max: number): IErrors {
-    return this.exec(a.length <= max, this.expected.maxLength(max));
+    return this.exec(!a || a.length <= max, this.expected.maxLength(max));
   }
 
   minLength(a: string, min: number): IErrors {
-    return this.exec(a.length >= min, this.expected.minLength(min));
+    return this.exec(!a || a.length >= min, this.expected.minLength(min));
   }
 
   max(a: number, max: number): IErrors {

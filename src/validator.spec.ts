@@ -18,6 +18,14 @@ describe("validator", () => {
     expect(result).toEqual({ null: true });
   });
 
+  it("value min/max length passes when null", async () => {
+    const result = {
+      ...validate.minLength(null, 1),
+      ...validate.maxLength(null, 1)
+    }
+    expect(result).toEqual({ });
+  });
+
   it("value includes A", async () => {
     const result = validate.includes("ABC", "A");
     expect(result).toEqual(StandardErrors.EMPTY);
