@@ -1,20 +1,23 @@
 /** Rule interface for creating re-usable rules
  *
  * ```typescript
- * function notDecimalRule(value: any): IRule {
+ * function between(value: number, low:number, high:number): IRule {
  *    return {
- *      result: !Number.isInteger(value),
- *      errorKey: 'decimal'
+ *      result: value>low && value<high,
+ *      errorKey: 'between',
+ *      errorValue: {low, high}
  *    };
  * }
  * ```
  *
- * the above can then be used by the ```validate.rule``` method
+ * the ```between``` rule can then be used by the ```validate.rule()``` method
  *
- * see validator.spec.ts for full example
+ * ```typescript
+ * validate.not.rule(between(value, 1, 10))
+ * ```
  */
 export interface IRule {
-  result: boolean;
-  errorKey: string;
-  errorValue?: any;
+    result: boolean;
+    errorKey: string;
+    errorValue?: any;
 }
