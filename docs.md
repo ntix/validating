@@ -1,5 +1,5 @@
-# @ntix/validate
+# @ntix/validating
 
 A small validator
 
-[github.com/MrAntix/validate](https://github.com/MrAntix/validate/)
+[github.com/ntix/validating](https://github.com/ntix/validating/)
