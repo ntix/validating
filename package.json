@@ -13,18 +13,18 @@
     "dist/"
   ],
   "scripts": {
-    "prebuild": "npm run clean",
-    "build": "npm run barrels && rollup -c rollup.config.ts",
-    "build.docs": "typedoc --out docs --mode file src --theme minimal --readme docs.md --media dist",
+    "prebuild": "npm run clean && npm run barrels",
+    "barrels": "barrelsby -q --delete --directory src --include \\.ts$ --exclude \"(\\.spec|this)\\.ts$\" --location all",
+    "build": "ttsc",
+    "build.docs": "typedoc --out docs src --theme minimal --readme docs.md --media dist",
     "clean": "shx rm -rf dist",
-    "barrels": "barrelsby --delete --directory src --include \\.ts$ --exclude \\.spec\\.ts$ --location all",
+    "format": "tslint -c tslint.json 'src/**/*.{ts,tsx}' && prettier --write \"./**/*.{ts,tsx,json}\"",
     "test": "jest",
     "test.watch": "jest --watchAll",
-    "commit": "npm run test && npm run build.docs && git add . && lint-staged && npx git-cz",
+    "start": "npm run build.docs && serve docs",
+    "commit": "git add . && npx git-cz",
+    "prepublishOnly": "npm run build.docs",
     "semantic-release": "semantic-release"
-  },
-  "engines": {
-    "node": "^10.15"
   },
   "keywords": [
     "validate",
