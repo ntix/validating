@@ -12,14 +12,17 @@ export class ValidationState<TValue> implements IValidationState<TValue> {
     public readonly validate: IValidate<Partial<TValue>>,
     /** value */
     public readonly value: Partial<TValue> = null,
-    /** validation errors */
-    public readonly errors: IErrors = StandardErrors.EMPTY
+    /** validation errors, will be normalized */
+    errors: IErrors = StandardErrors.EMPTY
   ) {
     if (validate == null) throw new Error('validate is required');
 
-    this.invalid = normalize(this.errors) !== StandardErrors.EMPTY;
+    this.errors = normalize(errors);
+    this.invalid = this.errors !== StandardErrors.EMPTY;
   }
 
+  /** validation errors */
+  readonly errors: IErrors = StandardErrors.EMPTY
   /** state is invalid */
   readonly invalid: boolean = false;
 
