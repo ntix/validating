@@ -9,9 +9,9 @@ import { IValidationState } from './IValidationState';
 export class ValidationState<TValue> implements IValidationState<TValue> {
   constructor(
     /** validator function */
-    public readonly validate: IValidate<Partial<TValue>>,
+    public readonly validate: IValidate<TValue>,
     /** value */
-    public readonly value: Partial<TValue> = null,
+    public readonly value: TValue = null,
     /** validation errors, will be normalized */
     errors: IErrors = StandardErrors.EMPTY
   ) {
@@ -33,7 +33,7 @@ export class ValidationState<TValue> implements IValidationState<TValue> {
    * @returns         a new state object if there is change, same if not
    */
   async set(
-    value: Partial<TValue>,
+    value: TValue,
     onChange?: (newState: ValidationState<TValue>) => void
   ): Promise<ValidationState<TValue>> {
     if (isEqual(this.value, value)) return this;
