@@ -9,17 +9,20 @@ import { IValidationState } from './IValidationState';
 export class ValidationState<TValue> implements IValidationState<TValue> {
   constructor(
     /** validator function */
-    public readonly validate: IValidate<Partial<TValue>>,
+    public readonly validate: IValidate<TValue>,
     /** value */
-    public readonly value: Partial<TValue> = null,
-    /** validation errors */
-    public readonly errors: IErrors = StandardErrors.EMPTY
+    public readonly value: TValue = null,
+    /** validation errors, will be normalized */
+    errors: IErrors = StandardErrors.EMPTY
   ) {
     if (validate == null) throw new Error('validate is required');
 
-    this.invalid = normalize(this.errors) !== StandardErrors.EMPTY;
+    this.errors = normalize(errors);
+    this.invalid = this.errors !== StandardErrors.EMPTY;
   }
 
+  /** validation errors */
+  readonly errors: IErrors = StandardErrors.EMPTY
   /** state is invalid */
   readonly invalid: boolean = false;
 
@@ -30,7 +33,7 @@ export class ValidationState<TValue> implements IValidationState<TValue> {
    * @returns         a new state object if there is change, same if not
    */
   async set(
-    value: Partial<TValue>,
+    value: TValue,
     onChange?: (newState: ValidationState<TValue>) => void
   ): Promise<ValidationState<TValue>> {
     if (isEqual(this.value, value)) return this;

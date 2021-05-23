@@ -59,4 +59,15 @@ describe('ValidationState', () => {
 
     expect(newState).toBeUndefined();
   });
+
+  it('errors are normalised', async () => {
+
+    const state = new ValidationState<number>(
+      async v => validate.min(v, 2),
+      INVALID_VALUE,
+      { prop: {} }
+    );
+
+    expect(state.errors).toBe(StandardErrors.EMPTY);
+  })
 });
