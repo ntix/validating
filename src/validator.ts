@@ -18,7 +18,8 @@ export class Validator {
     return new Validator(!this.negate);
   }
 
-  /** value should be null
+  /**
+   * value should be null
    *
    * @param a value
    * @returns errors
@@ -27,7 +28,8 @@ export class Validator {
     return this.exec(a == null, this.expected.null);
   }
 
-  /** value should be a number
+  /**
+   * value should be a number
    *
    * @param a value
    * @returns errors
@@ -36,7 +38,8 @@ export class Validator {
     return this.exec(isNumber(a), this.expected.number);
   }
 
-  /** value should be a string
+  /**
+   * value should be a string
    *
    * @param a value
    * @returns errors
@@ -45,7 +48,8 @@ export class Validator {
     return this.exec(isString(a), this.expected.string);
   }
 
-  /** values should be equal
+  /**
+   * values should be equal
    *
    * @param a 1st value to compare
    * @param b 2nd value to compare
@@ -55,7 +59,8 @@ export class Validator {
     return this.exec(isEqual(a, b), this.expected.equal(b));
   }
 
-  /** value should not me more than
+  /**
+   * value should not me more than
    *
    * @param a value
    * @param max maximum number value
@@ -65,7 +70,8 @@ export class Validator {
     return this.exec(!a || a.length <= max, this.expected.maxLength(max));
   }
 
-  /** value should not be less than
+  /**
+   * value should not be less than
    *
    * @param a value
    * @param min minimum number value
@@ -75,7 +81,8 @@ export class Validator {
     return this.exec(!a || a.length >= min, this.expected.minLength(min));
   }
 
-  /** value should not me more than
+  /**
+   * value should not me more than
    *
    * @param a value
    * @param max maximum value
@@ -85,7 +92,8 @@ export class Validator {
     return this.exec(a <= max, this.expected.max(max));
   }
 
-  /** value should not be less than
+  /**
+   * value should not be less than
    *
    * @param a value
    * @param min minimum value
@@ -95,7 +103,8 @@ export class Validator {
     return this.exec(a >= min, this.expected.min(min));
   }
 
-  /** 1st value includes second
+  /**
+   * 1st value includes second
    *
    * @param a iterable value, eg string or array
    * @param b value to find
@@ -105,7 +114,8 @@ export class Validator {
     return this.exec(a.includes(b), this.expected.includes(b));
   }
 
-  /** value must match regex
+  /**
+   * value must match regex
    *
    * @param value string value
    * @param re regular expression
@@ -123,7 +133,8 @@ export class Validator {
     );
   }
 
-  /** value must pass the rule
+  /**
+   * value must pass the rule
    *
    * @param rule rule
    * @returns errors

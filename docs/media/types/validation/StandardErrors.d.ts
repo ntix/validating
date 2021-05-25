@@ -1,4 +1,5 @@
-/** StandardErrors available
+/**
+ * StandardErrors available
  *
  * including EMPTY and negated errors
  *
