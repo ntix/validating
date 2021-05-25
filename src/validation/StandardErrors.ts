@@ -1,6 +1,7 @@
 import { createStandardErrors } from './createStandardErrors';
 
-/** StandardErrors available
+/**
+ * StandardErrors available
  *
  * including EMPTY and negated errors
  *
