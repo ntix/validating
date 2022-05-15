@@ -14,6 +14,7 @@ describe('ValidationState', () => {
 
     expect(state.value).toEqual(INVALID_VALUE);
     expect(state.errors).toEqual(StandardErrors.min(2));
+    expect(state.errors.min).toEqual(2);
     expect(state.invalid).toBe(true);
   });
 
@@ -69,5 +70,20 @@ describe('ValidationState', () => {
     );
 
     expect(state.errors).toBe(StandardErrors.EMPTY);
+  })
+
+  it('state on object property', async () => {
+
+    interface A { value: number }
+
+    let state = new ValidationState<A>(
+      async v => ({
+        value: validate.min(v.value, 2)
+      })
+    );
+
+    state = await state.set({ value: 1 })
+
+    expect(state.errors.value.min).toBe(2);
   })
 });
