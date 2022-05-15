@@ -116,11 +116,11 @@ function testNumberValidator(value?: number): IErrors {
     ...validate.not.equal(value, 1),
     ...validate.min(value, 0),
     ...validate.max(value, 2),
-    ...validate.not.rule(notDecimalRule(value))
+    ...validate.not.rule(isDecimalRule(value))
   };
 }
 
-function notDecimalRule(value: any): IRule {
+function isDecimalRule(value: any): IRule {
   return {
     result: !Number.isInteger(value),
     errorKey: "decimal"
