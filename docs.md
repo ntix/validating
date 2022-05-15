@@ -7,7 +7,8 @@ A small validator
 ## example
 
 ```typescript
-import { IErrors, StandardErrors, validate } from '@ntix/validating';
+
+import { IValidate, StandardErrors, validate } from '@ntix/validating';
 
 interface IUserRegistration {
   readonly userName: string;
@@ -15,37 +16,67 @@ interface IUserRegistration {
   readonly passwordConfirm: string;
 }
 
-/**
- * Validate a user registration
- * Break down the validation into smaller reusable functions
- */
-function validateUserRegistration(value: IUserRegistration): IErrors {
-  if (value == null) return StandardErrors.not.null;
+const validateUserRegistration: IValidate<IUserRegistration>
+  = value => {
+    if (value == null) return StandardErrors.not.null;
 
-  return {
-    userName: validateUserName(value.userName),
-    password: validatePassword(value.password),
-    passwordConfirm: validate.equal(value.passwordConfirm, value.password)
-  };
-}
+    return {
+      userName: validateUserName(value.userName),
+      password: validatePassword(value.password),
+      passwordConfirm: validate.equal(value.passwordConfirm, value.password)
+    };
+  }
 
-function validateUserName(value: string): IErrors {
-  if (value == null) return StandardErrors.not.null;
+// break validation down into reusable functions
 
-  return {
-    ...validate.minLength(value, 6),
-    ...validate.maxLength(value, 12)
-  };
-}
+const validateUserName: IValidate<string>
+  = value => {
+    if (value == null) return StandardErrors.not.null;
 
-function validatePassword(value: string): IErrors {
-  if (value == null) return StandardErrors.not.null;
+    return {
+      ...validate.minLength(value, 6),
+      ...validate.maxLength(value, 12)
+    };
+  }
 
-  return {
-    ...validate.minLength(value, 6),
-    ...validate.maxLength(value, 30),
-    ...validate.matches(value, /\d/, "complexity")
-  };
-}
+const validatePassword: IValidate<string>
+  = value => {
+    if (value == null) return StandardErrors.not.null;
 
+    return {
+      ...validate.minLength(value, 6),
+      ...validate.maxLength(value, 30),
+      ...validate.matches(value, /\d/, "complexity")
+    };
+  }
+```
+
+### Failing result
+
+```typescript
+const registration = {
+  userName: "robert",
+  password: "password",
+  passwordConfirm: "password"
+};
+
+> validateUserRegistration(registration)
+
+// validation fails with errors object
+{ password: { matches: "complexity" } }
+```
+
+### Passing result
+
+```typescript
+const registration = {
+  userName: "robert",
+  password: "password",
+  passwordConfirm: "passw0rd"
+};
+
+> validateUserRegistration(registration)
+
+// validation passes with empty errors object
+{}  (StandardErrors.EMPTY)
 ```

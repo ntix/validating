@@ -1,5 +1,5 @@
 import { ValidationState } from './ValidationState';
-import { validate } from '../validator';
+import { validate } from '../validate';
 import { StandardErrors } from '../validation';
 
 describe('ValidationState', () => {
