@@ -1,4 +1,4 @@
-import { validate } from "./validator";
+import { validate } from "./Validator";
 import { StandardErrors, IErrors, IRule, normalize } from "./validation";
 import { isNumber, isString } from "./predicates";
 
