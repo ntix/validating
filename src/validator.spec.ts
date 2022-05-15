@@ -1,5 +1,5 @@
-import { validate } from "./validator";
-import { StandardErrors, IErrors, IRule, normalize } from "./validation";
+import { validate } from "./validate";
+import { StandardErrors, IErrors, IRule, normalize, IValidate } from "./validation";
 import { isNumber, isString } from "./predicates";
 
 describe("validator", () => {
@@ -23,7 +23,7 @@ describe("validator", () => {
       ...validate.minLength(null, 1),
       ...validate.maxLength(null, 1)
     }
-    expect(result).toEqual({ });
+    expect(result).toEqual({});
   });
 
   it("value includes A", async () => {
@@ -116,11 +116,11 @@ function testNumberValidator(value?: number): IErrors {
     ...validate.not.equal(value, 1),
     ...validate.min(value, 0),
     ...validate.max(value, 2),
-    ...validate.not.rule(notDecimalRule(value))
+    ...validate.not.rule(isDecimalRule(value))
   };
 }
 
-function notDecimalRule(value: any): IRule {
+function isDecimalRule(value: any): IRule {
   return {
     result: !Number.isInteger(value),
     errorKey: "decimal"
@@ -133,31 +133,34 @@ interface IUserRegistration {
   readonly passwordConfirm: string;
 }
 
-function validateUserRegistration(value: IUserRegistration): IErrors {
-  if (value == null) return StandardErrors.not.null;
+const validateUserRegistration: IValidate<IUserRegistration>
+  = value => {
+    if (value == null) return StandardErrors.not.null;
 
-  return {
-    userName: validateUserName(value.userName),
-    password: validatePassword(value.password),
-    passwordConfirm: validate.equal(value.passwordConfirm, value.password)
-  };
-}
+    return {
+      userName: validateUserName(value.userName),
+      password: validatePassword(value.password),
+      passwordConfirm: validate.equal(value.passwordConfirm, value.password)
+    };
+  }
 
-function validateUserName(value: string): IErrors {
-  if (value == null) return StandardErrors.not.null;
+const validateUserName: IValidate<string>
+  = value => {
+    if (value == null) return StandardErrors.not.null;
 
-  return {
-    ...validate.minLength(value, 6),
-    ...validate.maxLength(value, 12)
-  };
-}
+    return {
+      ...validate.minLength(value, 6),
+      ...validate.maxLength(value, 12)
+    };
+  }
 
-function validatePassword(value: string): IErrors {
-  if (value == null) return StandardErrors.not.null;
+const validatePassword: IValidate<string>
+  = value => {
+    if (value == null) return StandardErrors.not.null;
 
-  return {
-    ...validate.minLength(value, 6),
-    ...validate.maxLength(value, 30),
-    ...validate.matches(value, /\d/, "complexity")
-  };
-}
+    return {
+      ...validate.minLength(value, 6),
+      ...validate.maxLength(value, 30),
+      ...validate.matches(value, /\d/, "complexity")
+    };
+  }

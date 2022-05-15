@@ -1,7 +1,7 @@
-import { IErrors } from '../validation';
+import { ValidationErrors } from '../validation';
 
 export interface IValidationState<TValue> {
   readonly value?: Partial<TValue>;
-  readonly errors: IErrors;
+  readonly errors: ValidationErrors<TValue>;
   readonly invalid: boolean;
 }

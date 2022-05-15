@@ -7,6 +7,7 @@ import {
 } from './validation';
 import { isEqual, isNumber, isString } from './predicates';
 
+
 export class Validator {
   private readonly expected: IStandardErrors;
 
@@ -150,5 +151,3 @@ export class Validator {
     return (this.negate ? !result : result) ? StandardErrors.EMPTY : failure;
   }
 }
-
-export const validate = new Validator();

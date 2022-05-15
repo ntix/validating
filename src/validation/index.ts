@@ -9,5 +9,7 @@ export * from './IErrors';
 export * from './IRule';
 export * from './IStandardErrors';
 export * from './IValidate';
+export * from './IValidateAsync';
 export * from './normalize';
 export * from './StandardErrors';
+export * from './ValidationErrors';
