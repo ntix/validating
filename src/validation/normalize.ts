@@ -1,5 +1,5 @@
-import { IErrors } from "./IErrors";
-import { StandardErrors } from "./StandardErrors";
+import { IErrors } from './IErrors';
+import { StandardErrors } from './StandardErrors';
 
 /** normalize a validation result, by removing empty sub-properties
  *
@@ -8,7 +8,7 @@ import { StandardErrors } from "./StandardErrors";
  * @returns       the result with empty sub-properties removed
  */
 export function normalize(errors: IErrors | any): IErrors | any {
-  if (typeof errors !== "object") return errors;
+  if (typeof errors !== 'object') return errors;
 
   return Object.keys(errors).reduce((result, key) => {
     const value = normalize(errors[key]);
@@ -17,7 +17,7 @@ export function normalize(errors: IErrors | any): IErrors | any {
       ? result
       : {
           ...result,
-          [key]: value
+          [key]: value,
         };
   }, StandardErrors.EMPTY);
 }

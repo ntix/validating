@@ -9,7 +9,7 @@ describe('isEmpty', () => {
     ['empty', false],
     [{}, true],
     [StandardErrors.EMPTY, true],
-    [{ notEmpty: true }, false]
+    [{ notEmpty: true }, false],
   ].forEach(([a, expected]) => {
     it(`${a} ${expected ? 'is' : 'is not'} empty`, () => {
       const result = isEmpty(a);

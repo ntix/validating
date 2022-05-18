@@ -1,8 +1,7 @@
 import { IErrors } from './IErrors';
-
 /** errors returned from validating TValue */
-export type ValidationErrors<TValue> = {
+export declare type ValidationErrors<TValue> = {
   [P in {
-    [K in keyof TValue]: TValue[K] extends () => void ? never : K;
+    [K in keyof TValue]: TValue[K] extends Function ? never : K;
   }[keyof TValue]]: IErrors;
 } & IErrors;

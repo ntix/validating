@@ -6,9 +6,10 @@ import { IErrors } from './IErrors';
  *
  * including EMPTY and negated errors
  *
- * negated error keys are prefixed by 'not' e.g. { notNull: true } */
+ * negated error keys are prefixed by 'not' e.g. { notNull: true }
+ */
 export const StandardErrors: IErrors = Object.freeze({
   EMPTY: Object.freeze({}),
   ...createStandardErrors(),
-  not: createStandardErrors(true)
+  not: createStandardErrors(true),
 });

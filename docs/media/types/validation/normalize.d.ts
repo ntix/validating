@@ -1,4 +1,4 @@
-import { IErrors } from "./IErrors";
+import { IErrors } from './IErrors';
 /** normalize a validation result, by removing empty sub-properties
  *
  * @param errors  any result from a validation function

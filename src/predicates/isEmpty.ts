@@ -1,4 +1,4 @@
-import { StandardErrors } from '../validation';
+import { StandardErrors } from '../validation/StandardErrors';
 import { isEqual } from './isEqual';
 export function isEmpty(a: any): boolean {
   return (

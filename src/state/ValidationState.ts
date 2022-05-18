@@ -1,5 +1,10 @@
 import { isEqual } from '../predicates';
-import { ValidationErrors, StandardErrors, normalize, IValidateAsync } from '../validation';
+import {
+  ValidationErrors,
+  StandardErrors,
+  normalize,
+  IValidateAsync,
+} from '../validation';
 import { IValidationState } from './IValidationState';
 
 /** represents state for a value which is validated
@@ -22,7 +27,7 @@ export class ValidationState<TValue> implements IValidationState<TValue> {
   }
 
   /** validation errors */
-  readonly errors: ValidationErrors<TValue> = StandardErrors.EMPTY
+  readonly errors: ValidationErrors<TValue> = StandardErrors.EMPTY;
   /** state is invalid */
   readonly invalid: boolean = false;
 

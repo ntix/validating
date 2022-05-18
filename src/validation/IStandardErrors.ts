@@ -1,4 +1,4 @@
-import { IErrors } from "./IErrors";
+import { IErrors } from './IErrors';
 
 /** available standard errors */
 export interface IStandardErrors {

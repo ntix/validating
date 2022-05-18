@@ -1,5 +1,5 @@
-import { capitalize } from "../utils";
-import { IErrors } from "./IErrors";
+import { capitalize } from '../utils';
+import { IErrors } from './IErrors';
 
 /** Creates a frozen error object
  *
@@ -15,6 +15,6 @@ export function createError(
   errorValue: any = true
 ): IErrors {
   return Object.freeze({
-    [not ? `not${capitalize(errorKey)}` : errorKey]: errorValue
+    [not ? `not${capitalize(errorKey)}` : errorKey]: errorValue,
   });
 }

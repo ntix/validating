@@ -1,16 +1,16 @@
-import { isString } from "./isString";
+import { isString } from './isString';
 
-describe("isString", () => {
+describe('isString', () => {
   [
     [null, false] as any,
     [undefined, false],
     [{}, false],
     [[], false],
     [0, false],
-    ["string", true],
-    ["", true]
+    ['string', true],
+    ['', true],
   ].forEach(([a, expected]) => {
-    it(`${a} ${expected ? "is" : "is not"} a string`, () => {
+    it(`${a} ${expected ? 'is' : 'is not'} a string`, () => {
       const result = isString(a);
       expect(result).toBe(expected);
     });
