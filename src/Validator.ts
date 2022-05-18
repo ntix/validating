@@ -3,10 +3,9 @@ import {
   StandardErrors,
   IStandardErrors,
   IRule,
-  createError
+  createError,
 } from './validation';
 import { isEqual, isNumber, isString } from './predicates';
-
 
 export class Validator {
   private readonly expected: IStandardErrors;
@@ -24,7 +23,7 @@ export class Validator {
    *
    * @param a value
    * @returns errors
-  */
+   */
   null(a: any): IErrors {
     return this.exec(a == null, this.expected.null);
   }
@@ -68,7 +67,7 @@ export class Validator {
    * @returns errors
    */
   maxLength(a: string, max: number): IErrors {
-    return this.exec(!a || a.length <= max, this.expected.maxLength(max));
+    return this.exec(a == null || a.length <= max, this.expected.maxLength(max));
   }
 
   /**
@@ -79,7 +78,7 @@ export class Validator {
    * @returns errors
    */
   minLength(a: string, min: number): IErrors {
-    return this.exec(!a || a.length >= min, this.expected.minLength(min));
+    return this.exec(a == null || a.length >= min, this.expected.minLength(min));
   }
 
   /**
