@@ -1,15 +1,28 @@
-import { IErrors } from './IErrors';
 
 /** available standard errors */
-export interface IStandardErrors {
-  null: IErrors;
-  number: IErrors;
-  string: IErrors;
-  equal: (to: any) => IErrors;
-  maxLength: (max: number) => IErrors;
-  minLength: (min: number) => IErrors;
-  max: (max: number) => IErrors;
-  min: (min: number) => IErrors;
-  includes: (value: any) => IErrors;
-  matches: (re: RegExp | string) => IErrors;
+export interface IStandardErrors extends
+  IStandardNumberErrors,
+  IStandardStringErrors {
+}
+
+/** available 'any' errors */
+export interface IStandardAnyErrors {
+  null?: true;
+  equal?: any;
+}
+
+/** available 'number' errors */
+export interface IStandardNumberErrors extends IStandardAnyErrors {
+  number?: true;
+  max?: number;
+  min?: number;
+}
+
+/** available 'string' errors */
+export interface IStandardStringErrors extends IStandardAnyErrors {
+  string?: true;
+  maxLength?: number;
+  minLength?: number;
+  includes?: any;
+  matches?: RegExp | string;
 }

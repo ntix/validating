@@ -1,5 +1,5 @@
-import { IStandardErrors } from './IStandardErrors';
 import { createError } from './createError';
+import { IStandardErrorProviders } from "./IStandardErrorProviders";
 
 /** creates all standard errors
  *
@@ -7,7 +7,9 @@ import { createError } from './createError';
  *
  * @returns standard errors
  */
-export function createStandardErrors(not: boolean = false): IStandardErrors {
+export function createStandardErrors(not: boolean = false)
+  : IStandardErrorProviders {
+
   return Object.freeze({
     null: createError(not, 'null'),
     number: createError(not, 'number'),

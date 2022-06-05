@@ -1,14 +1,29 @@
 import { ValidationState } from './ValidationState';
 import { validate } from '../validate';
-import { StandardErrors } from '../validation';
+import { IValidate, StandardErrors } from '../validation';
 
 describe('ValidationState', () => {
   const INVALID_VALUE = 1;
   const VALID_VALUE = 2;
 
+  const validateNumber: IValidate<number> =
+    value => validate.min(value, 2);
+
   it('state.set sets properties', async () => {
     const state = await new ValidationState<number>(
-      async (v) => validate.min(v, 2),
+      async v => validateNumber(v),
+      VALID_VALUE
+    ).set(INVALID_VALUE);
+
+    expect(state.value).toEqual(INVALID_VALUE);
+    expect(state.errors).toEqual(StandardErrors.min(2));
+    expect(state.errors.min).toEqual(2);
+    expect(state.invalid).toBe(true);
+  });
+
+  it('state.set sets properties sync', async () => {
+    const state = await new ValidationState<number>(
+      validateNumber,
       VALID_VALUE
     ).set(INVALID_VALUE);
 
@@ -62,7 +77,7 @@ describe('ValidationState', () => {
   });
 
   it('errors are normalised', async () => {
-    const state = new ValidationState<number>(
+    const state = new ValidationState<any>(
       async (v) => validate.min(v, 2),
       INVALID_VALUE,
       { prop: {} }
