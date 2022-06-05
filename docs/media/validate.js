@@ -1,2 +1,2 @@
-import { Validator } from "./Validator";
+import { Validator } from './Validator';
 export const validate = new Validator();

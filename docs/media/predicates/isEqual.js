@@ -14,7 +14,7 @@ export function isEqual(a, b) {
         const bv = b.valueOf();
         if (av !== a || bv !== b)
             return isEqual(av, bv);
-        return Object.keys(Object.assign(Object.assign({}, a), b)).every(n => isEqual(a[n], b[n]));
+        return Object.keys(Object.assign(Object.assign({}, a), b)).every((n) => isEqual(a[n], b[n]));
     }
     return false;
 }
