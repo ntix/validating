@@ -1,4 +1,3 @@
-
 /** deep equality check */
 export function isEqual(a: any, b: any): boolean {
   if (a === b) return true;
@@ -17,10 +16,8 @@ export function isEqual(a: any, b: any): boolean {
     const av = a.valueOf();
     const bv = b.valueOf();
     if (av !== a || bv !== b) return isEqual(av, bv);
-    return Object.keys({ ...a, ...b }).every(n => isEqual(a[n], b[n]));
+    return Object.keys({ ...a, ...b }).every((n) => isEqual(a[n], b[n]));
   }
 
   return false;
 }
-
-

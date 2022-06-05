@@ -7,6 +7,7 @@ export * from './createStandardErrors';
 export * from './hasErrors';
 export * from './IErrors';
 export * from './IRule';
+export * from './IStandardErrorProviders';
 export * from './IStandardErrors';
 export * from './IValidate';
 export * from './IValidateAsync';

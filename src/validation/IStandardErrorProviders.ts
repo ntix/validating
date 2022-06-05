@@ -1,6 +1,8 @@
 import { IErrors } from './IErrors';
-/** available standard errors */
-export interface IStandardErrors {
+
+/** Standard error providers */
+
+export interface IStandardErrorProviders {
   null: IErrors;
   number: IErrors;
   string: IErrors;
