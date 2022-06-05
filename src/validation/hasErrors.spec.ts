@@ -9,7 +9,7 @@ describe('hasErrors', () => {
     [{ error: true }, null, true],
     [{ error: true }, 'error', true],
     [{ error: true }, 'error.deeper', false],
-    [{ error: { deeper: true } }, 'error.deeper', true]
+    [{ error: { deeper: true } }, 'error.deeper', true],
   ].forEach(([errors, path, expected]) => {
     it(`${path} on ${JSON.stringify(errors, undefined, 2)} ${
       expected ? 'has' : 'has no'

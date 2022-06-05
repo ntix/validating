@@ -1,4 +1,4 @@
-import { IErrors } from "./IErrors";
+import { IErrors } from './IErrors';
 /** Creates a frozen error object
  *
  * @param not         when set will prefix the capitalised error key with 'not'
@@ -7,4 +7,8 @@ import { IErrors } from "./IErrors";
  *
  * @returns           a frozen error object
  */
-export declare function createError(not: boolean, errorKey: string, errorValue?: any): IErrors;
+export declare function createError(
+  not: boolean,
+  errorKey: string,
+  errorValue?: any
+): IErrors;

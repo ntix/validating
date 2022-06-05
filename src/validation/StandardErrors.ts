@@ -1,14 +1,14 @@
 import { createStandardErrors } from './createStandardErrors';
-import { IErrors } from './IErrors';
 
 /**
  * StandardErrors available
  *
  * including EMPTY and negated errors
  *
- * negated error keys are prefixed by 'not' e.g. { notNull: true } */
-export const StandardErrors: IErrors = Object.freeze({
-  EMPTY: Object.freeze({}),
+ * negated error keys are prefixed by 'not' e.g. { notNull: true }
+ */
+export const StandardErrors = Object.freeze({
+  EMPTY: Object.freeze({}) as any,
   ...createStandardErrors(),
-  not: createStandardErrors(true)
+  not: createStandardErrors(true),
 });

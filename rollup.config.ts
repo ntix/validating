@@ -1,29 +1,23 @@
-import typescript from 'rollup-plugin-typescript2';
-import json from 'rollup-plugin-json';
+import typescript from '@rollup/plugin-typescript';
 
-const pkg = require('./package.json');
+import pkg from './package.json';
 
 export default {
   input: `src/index.ts`,
   output: [
     {
-      file: pkg.module,
-      format: 'es',
-      sourcemap: true
-    },
-    {
       file: pkg.main,
-      format: 'cjs',
-      sourcemap: true
-    }
+      format: 'umd',
+      name: 'validating',
+      sourcemap: true,
+    },
   ],
   watch: {
-    include: 'src/**'
+    include: 'src/**',
   },
   plugins: [
     typescript({
-      tsconfig: 'tsconfig.build.json'
+      tsconfig: 'tsconfig.build.json',
     }),
-    json()
-  ]
+  ],
 };

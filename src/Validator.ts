@@ -1,15 +1,14 @@
 import {
-  IErrors,
   StandardErrors,
-  IStandardErrors,
   IRule,
-  createError
+  createError,
+  IStandardErrorProviders,
+  IErrors
 } from './validation';
 import { isEqual, isNumber, isString } from './predicates';
 
-
 export class Validator {
-  private readonly expected: IStandardErrors;
+  private readonly expected: IStandardErrorProviders;
 
   constructor(private negate: boolean = false) {
     this.expected = negate ? StandardErrors.not : StandardErrors;
@@ -24,8 +23,8 @@ export class Validator {
    *
    * @param a value
    * @returns errors
-  */
-  null(a: any): IErrors {
+   */
+  null(a: any) {
     return this.exec(a == null, this.expected.null);
   }
 
@@ -35,7 +34,7 @@ export class Validator {
    * @param a value
    * @returns errors
    */
-  number(a: any): IErrors {
+  number(a: any) {
     return this.exec(isNumber(a), this.expected.number);
   }
 
@@ -45,7 +44,7 @@ export class Validator {
    * @param a value
    * @returns errors
    */
-  string(a: any): IErrors {
+  string(a: any) {
     return this.exec(isString(a), this.expected.string);
   }
 
@@ -56,7 +55,7 @@ export class Validator {
    * @param b 2nd value to compare
    * @returns errors
    */
-  equal(a: any, b: any): IErrors {
+  equal(a: any, b: any) {
     return this.exec(isEqual(a, b), this.expected.equal(b));
   }
 
@@ -67,8 +66,8 @@ export class Validator {
    * @param max maximum number value
    * @returns errors
    */
-  maxLength(a: string, max: number): IErrors {
-    return this.exec(!a || a.length <= max, this.expected.maxLength(max));
+  maxLength(a: string, max: number) {
+    return this.exec(a == null || a.length <= max, this.expected.maxLength(max));
   }
 
   /**
@@ -78,8 +77,8 @@ export class Validator {
    * @param min minimum number value
    * @returns errors
    */
-  minLength(a: string, min: number): IErrors {
-    return this.exec(!a || a.length >= min, this.expected.minLength(min));
+  minLength(a: string, min: number) {
+    return this.exec(a == null || a.length >= min, this.expected.minLength(min));
   }
 
   /**
@@ -89,7 +88,7 @@ export class Validator {
    * @param max maximum value
    * @returns errors
    */
-  max(a: number, max: number): IErrors {
+  max(a: number, max: number) {
     return this.exec(a <= max, this.expected.max(max));
   }
 
@@ -100,7 +99,7 @@ export class Validator {
    * @param min minimum value
    * @returns errors
    */
-  min(a: number, min: number): IErrors {
+  min(a: number, min: number) {
     return this.exec(a >= min, this.expected.min(min));
   }
 
@@ -111,7 +110,7 @@ export class Validator {
    * @param b value to find
    * @returns errors
    */
-  includes(a: any, b: any): IErrors {
+  includes(a: any, b: any) {
     return this.exec(a.includes(b), this.expected.includes(b));
   }
 
@@ -127,7 +126,7 @@ export class Validator {
     value: string,
     re: RegExp | string,
     description: string = null
-  ): IErrors {
+  ) {
     return this.exec(
       new RegExp(re).test(value),
       this.expected.matches(description || re)
@@ -140,14 +139,16 @@ export class Validator {
    * @param rule rule
    * @returns errors
    */
-  rule(rule: IRule): IErrors {
+  rule(rule: IRule) {
     return this.exec(
       rule.result,
       createError(this.negate, rule.errorKey, rule.errorValue)
     );
   }
 
-  private exec(result: boolean, failure: IErrors) {
-    return (this.negate ? !result : result) ? StandardErrors.EMPTY : failure;
+  private exec<TFailure>(result: boolean, failure: TFailure): IErrors {
+    return (this.negate ? !result : result)
+      ? StandardErrors.EMPTY
+      : failure;
   }
 }
