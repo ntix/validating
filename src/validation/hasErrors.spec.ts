@@ -10,12 +10,14 @@ describe('hasErrors', () => {
     [{ error: true }, 'error', true],
     [{ error: true }, 'error.deeper', false],
     [{ error: { deeper: true } }, 'error.deeper', true],
+    [{ error: { deeper: {} } }, null, false],
   ].forEach(([errors, path, expected]) => {
-    it(`${path} on ${JSON.stringify(errors, undefined, 2)} ${
-      expected ? 'has' : 'has no'
-    } errors`, () => {
-      const result = hasErrors(errors, path);
-      expect(result).toBe(expected);
-    });
+
+    const errorsJson = JSON.stringify(errors, undefined, 2);
+    it(`${path} on ${errorsJson} ${expected ? 'has' : 'has no'} errors`,
+      () => {
+        const result = hasErrors(errors, path);
+        expect(result).toBe(expected);
+      });
   });
 });

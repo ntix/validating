@@ -1,13 +1,13 @@
-import { normalize } from './normalize';
+import { normalizeErrors } from './normalizeErrors';
 
-describe('normalize', () => {
+describe('normalizeErrors', () => {
   it('removes empty', () => {
     const errors = {
       a: {},
       b: { null: true },
     };
 
-    const result = normalize(errors);
+    const result = normalizeErrors(errors);
 
     expect(result).toEqual({
       b: { null: true },
@@ -20,7 +20,7 @@ describe('normalize', () => {
       b: { null: true },
     };
 
-    const result = normalize(errors);
+    const result = normalizeErrors(errors);
 
     expect(result).toEqual({
       b: { null: true },
@@ -30,7 +30,7 @@ describe('normalize', () => {
   it('returns empty', () => {
     const errors = {};
 
-    const result = normalize(errors);
+    const result = normalizeErrors(errors);
 
     expect(result).toEqual({});
   });
