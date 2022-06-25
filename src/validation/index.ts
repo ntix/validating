@@ -11,6 +11,6 @@ export * from './IStandardErrorProviders';
 export * from './IStandardErrors';
 export * from './IValidate';
 export * from './IValidateAsync';
-export * from './normalize';
+export * from './normalizeErrors';
 export * from './StandardErrors';
 export * from './ValidationErrors';

@@ -1,5 +1,5 @@
 import { isEqual } from '../predicates';
-import { StandardErrors, normalize } from '../validation';
+import { StandardErrors, normalizeErrors, } from '../validation';
 /** represents state for a value which is validated
  *
  *  useful for user facing components
@@ -14,13 +14,11 @@ export class ValidationState {
     errors = StandardErrors.EMPTY) {
         this.validate = validate;
         this.value = value;
-        /** validation errors */
-        this.errors = StandardErrors.EMPTY;
         /** state is invalid */
         this.invalid = false;
         if (validate == null)
             throw new Error('validate is required');
-        this.errors = normalize(errors);
+        this.errors = normalizeErrors(errors);
         this.invalid = this.errors !== StandardErrors.EMPTY;
     }
     /** if there are changes calls validation and sets errors and invalid properites

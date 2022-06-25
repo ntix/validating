@@ -5,4 +5,8 @@ import { IErrors } from './IErrors';
  *
  * @returns       the result with empty sub-properties removed
  */
+export declare function normalizeErrors(errors: IErrors | any): IErrors | any;
+/**
+ * @deprecated use normalizeErrors
+ */
 export declare function normalize(errors: IErrors | any): IErrors | any;

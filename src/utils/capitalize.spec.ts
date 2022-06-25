@@ -9,7 +9,7 @@ describe('capitalize', () => {
   ].forEach(([a, expected]) => {
     it(`${a} => ${expected}`, () => {
       const result = capitalize(a);
-      expect(result).toBe(expected);
+      expect(result).toEqual(expected);
     });
   });
 });
