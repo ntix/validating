@@ -24,6 +24,36 @@ describe('validator', () => {
     expect(result).toEqual({ null: true });
   });
 
+  it('value is number', async () => {
+    const result = validate.number(1);
+    expect(result).toEqual(StandardErrors.EMPTY);
+  });
+
+  it('value is number passes when null', async () => {
+    const result = validate.number(null);
+    expect(result).toEqual(StandardErrors.EMPTY);
+  });
+
+  it('value is number errors when not number', async () => {
+    const result = validate.number('a');
+    expect(result).toEqual({ number: true });
+  });
+
+  it('value is string', async () => {
+    const result = validate.string('a');
+    expect(result).toEqual(StandardErrors.EMPTY);
+  });
+
+  it('value is string passes when null', async () => {
+    const result = validate.string(null);
+    expect(result).toEqual(StandardErrors.EMPTY);
+  });
+
+  it('value is string errors when not string', async () => {
+    const result = validate.string(1);
+    expect(result).toEqual({ string: true });
+  });
+
   it('value min/max length passes when null', async () => {
     const result = {
       ...validate.minLength(null, 1),
