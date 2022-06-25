@@ -17,7 +17,7 @@
  * ```
  */
 export interface IRule {
-  result: boolean;
-  errorKey: string;
-  errorValue?: any;
+    result: boolean;
+    errorKey: string;
+    errorValue?: any;
 }

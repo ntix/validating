@@ -2,7 +2,7 @@ import { isEqual } from '../predicates';
 import {
   ValidationErrors,
   StandardErrors,
-  normalize,
+  normalizeErrors,
   IValidate, IValidateAsync,
 } from '../validation';
 import { IValidationState } from './IValidationState';
@@ -22,7 +22,7 @@ export class ValidationState<TValue> implements IValidationState<TValue> {
   ) {
     if (validate == null) throw new Error('validate is required');
 
-    this.errors = normalize(errors);
+    this.errors = normalizeErrors(errors);
     this.invalid = this.errors !== StandardErrors.EMPTY;
   }
 

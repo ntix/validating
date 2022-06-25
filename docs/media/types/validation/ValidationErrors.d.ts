@@ -1,7 +1,7 @@
-import { IErrors } from './IErrors';
+import { IStandardAnyErrors, IStandardNumberErrors, IStandardStringErrors } from './IStandardErrors';
 /** errors returned from validating TValue */
-export declare type ValidationErrors<TValue> = {
-  [P in {
-    [K in keyof TValue]: TValue[K] extends Function ? never : K;
-  }[keyof TValue]]: IErrors;
-} & IErrors;
+export declare type ValidationErrors<TValue> = (TValue extends boolean ? IStandardAnyErrors : TValue extends number ? IStandardNumberErrors : TValue extends string ? IStandardStringErrors : {
+    [P in {
+        [K in keyof TValue]: TValue[K] extends () => void ? never : K;
+    }[keyof TValue]]?: ValidationErrors<TValue[P]>;
+});

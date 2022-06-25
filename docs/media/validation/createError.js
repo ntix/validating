@@ -1,4 +1,4 @@
-import { capitalize } from "../utils";
+import { capitalize } from '../utils';
 /** Creates a frozen error object
  *
  * @param not         when set will prefix the capitalised error key with 'not'
@@ -9,6 +9,6 @@ import { capitalize } from "../utils";
  */
 export function createError(not, errorKey, errorValue = true) {
     return Object.freeze({
-        [not ? `not${capitalize(errorKey)}` : errorKey]: errorValue
+        [not ? `not${capitalize(errorKey)}` : errorKey]: errorValue,
     });
 }

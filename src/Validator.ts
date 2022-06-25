@@ -21,31 +21,31 @@ export class Validator {
   /**
    * value should be null
    *
-   * @param a value
+   * @param value value
    * @returns errors
    */
-  null(a: any) {
-    return this.exec(a == null, this.expected.null);
+  null(value: any) {
+    return this.exec(value == null, this.expected.null);
   }
 
   /**
    * value should be a number
    *
-   * @param a value
+   * @param value value
    * @returns errors
    */
-  number(a: any) {
-    return this.exec(isNumber(a), this.expected.number);
+  number(value: any) {
+    return this.exec(value == null || isNumber(value), this.expected.number);
   }
 
   /**
    * value should be a string
    *
-   * @param a value
+   * @param value value
    * @returns errors
    */
-  string(a: any) {
-    return this.exec(isString(a), this.expected.string);
+  string(value: any) {
+    return this.exec(value == null || isString(value), this.expected.string);
   }
 
   /**
@@ -62,45 +62,45 @@ export class Validator {
   /**
    * value should not me more than
    *
-   * @param a value
+   * @param value value
    * @param max maximum number value
    * @returns errors
    */
-  maxLength(a: string, max: number) {
-    return this.exec(a == null || a.length <= max, this.expected.maxLength(max));
+  maxLength(value: string | null, max: number) {
+    return this.exec(value == null || value.length <= max, this.expected.maxLength(max));
   }
 
   /**
    * value should not be less than
    *
-   * @param a value
+   * @param value value
    * @param min minimum number value
    * @returns errors
    */
-  minLength(a: string, min: number) {
-    return this.exec(a == null || a.length >= min, this.expected.minLength(min));
+  minLength(value: string | null, min: number) {
+    return this.exec(value == null || value.length >= min, this.expected.minLength(min));
   }
 
   /**
    * value should not me more than
    *
-   * @param a value
+   * @param value value
    * @param max maximum value
    * @returns errors
    */
-  max(a: number, max: number) {
-    return this.exec(a <= max, this.expected.max(max));
+  max(value: number | null, max: number) {
+    return this.exec(value == null || value <= max, this.expected.max(max));
   }
 
   /**
    * value should not be less than
    *
-   * @param a value
+   * @param value value
    * @param min minimum value
    * @returns errors
    */
-  min(a: number, min: number) {
-    return this.exec(a >= min, this.expected.min(min));
+  min(value: number | null, min: number) {
+    return this.exec(value == null || value >= min, this.expected.min(min));
   }
 
   /**
@@ -111,7 +111,7 @@ export class Validator {
    * @returns errors
    */
   includes(a: any, b: any) {
-    return this.exec(a.includes(b), this.expected.includes(b));
+    return this.exec(a == null || a.includes(b), this.expected.includes(b));
   }
 
   /**
@@ -123,12 +123,12 @@ export class Validator {
    * @returns errors
    */
   matches(
-    value: string,
+    value: string | null,
     re: RegExp | string,
     description: string = null
   ) {
     return this.exec(
-      new RegExp(re).test(value),
+      value == null || new RegExp(re).test(value),
       this.expected.matches(description || re)
     );
   }
