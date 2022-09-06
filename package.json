@@ -45,7 +45,7 @@
     "prettier": "^2.6.2",
     "rollup": "^2.75.5",
     "semantic-release": "^19.0.2",
-    "serve": "^13.0.2",
+    "serve": "^14.0.1",
     "shx": "^0.3.4",
     "ts-jest": "^28.0.4",
     "tslint": "^6.1.3",
