@@ -125,7 +125,7 @@ export class Validator {
   matches(
     value: string | null,
     re: RegExp | string,
-    description: string = null
+    description: string | null = null
   ) {
     return this.exec(
       value == null || new RegExp(re).test(value),

@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "es2017"],
+    "strict": true,
+    "lib": [
+      "dom",
+      "es2017"
+    ],
     "moduleResolution": "node",
     "module": "esnext",
     "target": "es2017",
@@ -12,8 +16,16 @@
     "allowUnreachableCode": false,
     "experimentalDecorators": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true
+    "noUnusedParameters": true,
+    "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*.ts", "rollup.config.ts"],
-  "exclude": ["src/**/*.spec.ts", "node_modules"]
+  "include": [
+    "src/**/*.ts",
+    "rollup.config.ts"
+  ],
+  "exclude": [
+    "src/**/*.spec.ts",
+    "node_modules",
+    "docs"
+  ]
 }
