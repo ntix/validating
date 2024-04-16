@@ -8,12 +8,12 @@ export declare class ValidationState<TValue> implements IValidationState<TValue>
     /** validator function */
     readonly validate: IValidate<TValue> | IValidateAsync<TValue>;
     /** value */
-    readonly value: TValue;
+    readonly value: TValue | Partial<TValue> | null;
     constructor(
     /** validator function */
     validate: IValidate<TValue> | IValidateAsync<TValue>, 
     /** value */
-    value?: TValue, 
+    value?: TValue | Partial<TValue> | null, 
     /** validation errors, will be normalized */
     errors?: ValidationErrors<TValue>);
     /** validation errors */
