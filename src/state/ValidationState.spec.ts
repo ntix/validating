@@ -3,8 +3,8 @@ import { validate } from '../validate';
 import { IValidate, StandardErrors } from '../validation';
 
 describe('ValidationState', () => {
-  const INVALID_VALUE = 1;
-  const VALID_VALUE = 2;
+  const INVALID_VALUE: number = 1;
+  const VALID_VALUE: number = 2;
 
   const validateNumber: IValidate<number> =
     value => validate.min(value, 2);
@@ -58,7 +58,7 @@ describe('ValidationState', () => {
       async (v) => validate.min(v, 2),
       INVALID_VALUE
     );
-    let newState: ValidationState<number>;
+    let newState: ValidationState<number> = undefined!;
     await state.set(VALID_VALUE, (s) => (newState = s));
 
     expect(newState).not.toBeUndefined();
@@ -70,7 +70,7 @@ describe('ValidationState', () => {
       async (v) => validate.min(v, 2),
       INVALID_VALUE
     );
-    let newState: ValidationState<number>;
+    let newState: ValidationState<number> = undefined!;
     await state.set(INVALID_VALUE, (s) => (newState = s));
 
     expect(newState).toBeUndefined();
@@ -97,6 +97,6 @@ describe('ValidationState', () => {
 
     state = await state.set({ value: 1 });
 
-    expect(state.errors.value.min).toBe(2);
+    expect(state.errors.value?.min).toBe(2);
   });
 });

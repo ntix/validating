@@ -12,4 +12,5 @@ export * from './IValidate';
 export * from './IValidateAsync';
 export * from './normalizeErrors';
 export * from './StandardErrors';
+export * from './ValidationError';
 export * from './ValidationErrors';

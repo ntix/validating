@@ -16,7 +16,7 @@ export class ValidationState<TValue> implements IValidationState<TValue> {
     /** validator function */
     public readonly validate: IValidate<TValue> | IValidateAsync<TValue>,
     /** value */
-    public readonly value: Partial<TValue> | null = null,
+    public readonly value: TValue | Partial<TValue> | null = null,
     /** validation errors, will be normalized */
     errors: ValidationErrors<TValue> = StandardErrors.EMPTY
   ) {

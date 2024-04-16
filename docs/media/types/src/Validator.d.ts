@@ -7,24 +7,24 @@ export declare class Validator {
     /**
      * value should be null
      *
-     * @param a value
+     * @param value value
      * @returns errors
      */
-    null(a: any): IErrors;
+    null(value: any): IErrors;
     /**
      * value should be a number
      *
-     * @param a value
+     * @param value value
      * @returns errors
      */
-    number(a: any): IErrors;
+    number(value: any): IErrors;
     /**
      * value should be a string
      *
-     * @param a value
+     * @param value value
      * @returns errors
      */
-    string(a: any): IErrors;
+    string(value: any): IErrors;
     /**
      * values should be equal
      *
@@ -36,35 +36,35 @@ export declare class Validator {
     /**
      * value should not me more than
      *
-     * @param a value
+     * @param value value
      * @param max maximum number value
      * @returns errors
      */
-    maxLength(a: string, max: number): IErrors;
+    maxLength(value: string | null, max: number): IErrors;
     /**
      * value should not be less than
      *
-     * @param a value
+     * @param value value
      * @param min minimum number value
      * @returns errors
      */
-    minLength(a: string, min: number): IErrors;
+    minLength(value: string | null, min: number): IErrors;
     /**
      * value should not me more than
      *
-     * @param a value
+     * @param value value
      * @param max maximum value
      * @returns errors
      */
-    max(a: number, max: number): IErrors;
+    max(value: number | null, max: number): IErrors;
     /**
      * value should not be less than
      *
-     * @param a value
+     * @param value value
      * @param min minimum value
      * @returns errors
      */
-    min(a: number, min: number): IErrors;
+    min(value: number | null, min: number): IErrors;
     /**
      * 1st value includes second
      *
@@ -81,7 +81,7 @@ export declare class Validator {
      * @param description error description
      * @returns errors
      */
-    matches(value: string, re: RegExp | string, description?: string): IErrors;
+    matches(value: string | null, re: RegExp | string, description?: string | null): IErrors;
     /**
      * value must pass the rule
      *
