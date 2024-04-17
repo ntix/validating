@@ -16,7 +16,7 @@
     "barrels": "barrelsby -q --delete --directory src --include \\.ts$ --exclude \"(\\.spec|this)\\.ts$\" --location all",
     "prebuild": "npm run clean && npm run barrels",
     "build": "tsc && rollup -c rollup.config.ts --configPlugin @rollup/plugin-typescript",
-    "build.docs": "npm run build && typedoc --exclude \"**/*+(index|.spec|.e2e).ts\" --out docs src --readme docs.md --media dist",
+    "build.docs": "npm run build && typedoc --exclude \"**/*+(index|.spec|.e2e).ts\" --out docs src --readme docs.md --media dist && echo '**' > docs/.eslintignore",
     "clean": "shx rm -rf dist",
     "format": "tslint --fix -c tslint.json 'src/**/*.{ts,tsx}' && prettier --write \"./**/*.{ts,tsx,json}\"",
     "test": "jest",
