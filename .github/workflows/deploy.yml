@@ -25,6 +25,11 @@ jobs:
         npm i
         npm run build
         npm run test
+        npm run build.docs
+
+        git add -f /docs
+        git commit -m"docs: update"
+        git push
         
     - name: deploy
       env:

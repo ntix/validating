@@ -6,3 +6,4 @@ thumbs.db
 .npmignore
 coverage/
 node_modules/
+docs/
